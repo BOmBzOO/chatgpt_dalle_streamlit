@@ -21,6 +21,7 @@ class Receiver():
     def retrieve_messages(self):
         r = requests.get(
             f"https://discord.com/api/v10/channels/{self.channel_id}/messages?limit={10}", headers=self.headers)
+        print(r.json())
         return r.json()
     
     def collecting_describes(self, filename):
